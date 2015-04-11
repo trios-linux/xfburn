@@ -1,0 +1,28 @@
+From 0b1a59ca70f9ee57daa3e6b81cb50113e0b30ade Mon Sep 17 00:00:00 2001
+From: Julien Lavergne <julien.lavergne@gmail.com>
+Date: Sat, 5 Mar 2011 00:07:05 +0100
+Subject: [PATCH] Some fixes for the desktop file :
+ - Pass validation (xfce bug 6691)
+ - Allow to open blank CD and Audio CD
+
+ This patch has been slightly updated for Xubuntu to handle po/POTFILES.skip.
+---
+ po/POTFILES.skip  |    1 +
+ xfburn.desktop.in |    2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+--- a/xfburn.desktop.in
++++ b/xfburn.desktop.in
+@@ -6,7 +6,7 @@ _Comment=CD and DVD burning application
+ Exec=xfburn
+ TryExec=xfburn
+ Icon=media-cdrom
+-MimeType=application/x-cd-image;
++MimeType=application/x-cd-image;x-content/audio-cdda;x-content/blank-cd;
+ Terminal=false
+ Categories=X-XFCE;GTK;DiscBurning;Archiving;AudioVideo;Utility;
+ StartupNotify=true
+--- /dev/null
++++ b/po/POTFILES.skip
+@@ -0,0 +1 @@
++.pc/0001-Some-fixes-for-the-desktop-file.patch/xfburn.desktop.in
